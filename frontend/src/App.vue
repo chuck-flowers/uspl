@@ -11,7 +11,17 @@
           <th>Delivered Date Time</th>
         </tr>
       </thead>
-      <tbody></tbody>
+      <tbody>
+        <order-table-row
+          v-for="order in orders"
+          :key="order.orderNumber"
+          :orderNumber="order.orderNumber"
+          :orderDate="order.orderDate"
+          :orderStatus="order.orderStatus"
+          :scheduledDateTime="order.scheduledDateTime"
+          :deliveredDateTime="order.deliveredDateTime"
+        />
+      </tbody>
     </table>
   </div>
 </template>
