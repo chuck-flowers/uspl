@@ -20,7 +20,10 @@ async function getOrdersFromExternalApi(success, failure) {
 
 app.get('/orders', async (_, res) => {
     getOrdersFromExternalApi(orders => {
-        res.json(orders).end();
+        res
+            .header('Access-Control-Allow-Origin', '*')
+            .json(orders)
+            .end();
     }, ex => {
         res.status(500)
             .send('There was a problem fetching the orders data as requested:\n' + ex)
