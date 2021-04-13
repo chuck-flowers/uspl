@@ -17,8 +17,12 @@
 </template>
 
 <script>
+import OrderTableRow from "./components/OrderTableRow.vue";
 export default {
   name: "App",
+  components: {
+    OrderTableRow,
+  },
 };
 </script>
 
