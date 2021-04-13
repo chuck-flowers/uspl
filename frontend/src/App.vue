@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Current Orders</h1>
-    <table>
+    <table class="table">
       <thead>
         <tr>
           <th>Order Number</th>
