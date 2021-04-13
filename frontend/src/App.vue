@@ -23,6 +23,21 @@ export default {
   components: {
     OrderTableRow,
   },
+  data() {
+    return {
+      orders: [],
+    };
+  },
+  async created() {
+    const response = await fetch("http://localhost:8081/orders", {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+      },
+    });
+
+    this.orders = await response.json();
+  },
 };
 </script>
 
