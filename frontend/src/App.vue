@@ -4,11 +4,11 @@
     <table class="table">
       <thead>
         <tr>
-          <th>Order Number</th>
-          <th>Order Date</th>
-          <th>Order Status</th>
-          <th>Scheduled Date Time</th>
-          <th>Delivered Date Time</th>
+          <th scope="col">Order Number</th>
+          <th scope="col">Order Date</th>
+          <th scope="col">Order Status</th>
+          <th scope="col">Scheduled Date Time</th>
+          <th scope="col">Delivered Date Time</th>
         </tr>
       </thead>
       <tbody>
