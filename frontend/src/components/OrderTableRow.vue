@@ -1,5 +1,10 @@
 <template>
-  <tr>
+  <tr
+    :class="{
+      'table-success': isCompletedOnTime,
+      'table-danger': isCompletedLate,
+    }"
+  >
     <td>{{ orderNumber }}</td>
     <td>{{ formattedOrderDate }}</td>
     <td>{{ formattedStatus }}</td>
@@ -41,6 +46,18 @@ export default {
     },
   },
   computed: {
+    isCompletedOnTime() {
+      return (
+        this.orderStatus === "C" &&
+        this.scheduledDateTime >= this.deliveredDateTime
+      );
+    },
+    isCompletedLate() {
+      return (
+        this.orderStatus === "C" &&
+        this.scheduledDateTime < this.deliveredDateTime
+      );
+    },
     formattedOrderDate() {
       if (this.orderDate === null) {
         return "";
