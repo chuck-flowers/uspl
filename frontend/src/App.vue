@@ -16,10 +16,10 @@
           v-for="order in orders"
           :key="order.orderNumber"
           :orderNumber="order.orderNumber"
-          :orderDate="new Date(order.orderDate)"
+          :orderDate="stringToDate(order.orderDate)"
           :orderStatus="order.orderStatus"
-          :scheduledDateTime="new Date(order.scheduledDateTime)"
-          :deliveredDateTime="new Date(order.deliveredDateTime)"
+          :scheduledDateTime="stringToDate(order.scheduledDateTime)"
+          :deliveredDateTime="stringToDate(order.deliveredDateTime)"
         />
       </tbody>
     </table>
@@ -37,6 +37,15 @@ export default {
     return {
       orders: [],
     };
+  },
+  methods: {
+    stringToDate(str) {
+      if (str === null) {
+        return null;
+      } else {
+        return new Date(str);
+      }
+    },
   },
   async created() {
     const response = await fetch("http://localhost:8081/orders", {
