@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h1>Current Orders</h1>
     <table class="table">
       <thead>
         <tr>
