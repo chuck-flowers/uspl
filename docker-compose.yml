@@ -1,0 +1,14 @@
+version: '3.9'
+services:
+  frontend:
+    build: ./frontend
+    ports: 
+      - '8080:8080'
+    volumes:
+      - './frontend:/uspl-frontend'
+  backend:
+    build: ./backend
+    ports: 
+      - '8081:8081'
+    volumes:
+      - './backend:/uspl-backend'
