@@ -5,5 +5,18 @@ Vue.js frontend
 
 ## Running the Project
 
-The project can be ran using the following commands by running `npm install && 
-npm start` from a shell in both directories.
+Running these two applications requires that Node.js is installed. I tested 
+these applications using Node.js 15. Both components of the project can be 
+started using the following shell commands in their respective folders.
+
+**frontend**
+```shell
+npm install && npm run serve
+```
+
+**backend**
+```shell
+npm install && npm run start
+```
+
+This will make the frontend application accessible at `localhost:8080` and the backend endpoint accessible at `localhost:8081/orders`.
