@@ -46,24 +46,21 @@ export default {
         return "";
       }
 
-      const date = new Date(this.orderDate);
-      return this.formatDate(date);
+      return this.formatDate(this.orderDate);
     },
     formattedScheduledDateTime() {
       if (this.scheduledDateTime === null) {
         return "";
       }
 
-      const date = new Date(this.scheduledDateTime);
-      return this.formatDateTime(date);
+      return this.formatDateTime(this.scheduledDateTime);
     },
     formattedDeliveredDateTime() {
       if (this.deliveredDateTime === null) {
         return "";
       }
 
-      const date = new Date(this.deliveredDateTime);
-      return this.formatDateTime(date);
+      return this.formatDateTime(this.deliveredDateTime);
     },
     formattedStatus() {
       switch (this.orderStatus) {
@@ -79,10 +76,10 @@ export default {
   },
   props: {
     orderNumber: String,
-    orderDate: String,
+    orderDate: Date,
     orderStatus: String,
-    scheduledDateTime: String,
-    deliveredDateTime: String,
+    scheduledDateTime: Date,
+    deliveredDateTime: Date,
   },
 };
 </script>

@@ -16,10 +16,10 @@
           v-for="order in orders"
           :key="order.orderNumber"
           :orderNumber="order.orderNumber"
-          :orderDate="order.orderDate"
+          :orderDate="new Date(order.orderDate)"
           :orderStatus="order.orderStatus"
-          :scheduledDateTime="order.scheduledDateTime"
-          :deliveredDateTime="order.deliveredDateTime"
+          :scheduledDateTime="new Date(order.scheduledDateTime)"
+          :deliveredDateTime="new Date(order.deliveredDateTime)"
         />
       </tbody>
     </table>
