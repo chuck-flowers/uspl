@@ -2,7 +2,7 @@
   <tr>
     <td>{{ orderNumber }}</td>
     <td>{{ formattedOrderDate }}</td>
-    <td>{{ orderStatus }}</td>
+    <td>{{ formattedStatus }}</td>
     <td>{{ formattedScheduledDateTime }}</td>
     <td>{{ formattedDeliveredDateTime }}</td>
   </tr>
@@ -64,6 +64,17 @@ export default {
 
       const date = new Date(this.deliveredDateTime);
       return this.formatDateTime(date);
+    },
+    formattedStatus() {
+      switch (this.orderStatus) {
+        case "C":
+          return "Completed";
+        case "A":
+          return "In Progress";
+        default:
+          console.error(`Unexpected status code '${this.orderStatus}'`);
+          return "";
+      }
     },
   },
   props: {
